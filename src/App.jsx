@@ -4,11 +4,13 @@ import orangecar from './assets/orangecar.jpg';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { IoArrowForward } from 'react-icons/io5';
+import { IoArrowForward, IoCarSportOutline } from 'react-icons/io5';
 import { Ri24HoursLine } from 'react-icons/ri';
 import { MdSupportAgent } from 'react-icons/md';
 import { BsLightningCharge } from 'react-icons/bs';
-import { GoShieldCheck } from 'react-icons/go';
+import { GoPeople, GoShieldCheck } from 'react-icons/go';
+import { TbManualGearbox } from 'react-icons/tb';
+import { PiGasPumpLight } from 'react-icons/pi';
 
 function App() {
 
@@ -40,19 +42,19 @@ function App() {
         </div>
         <div className="grid grid-cols-3 h-65 mb-10">
           <div className="flex flex-col items-center justify-center">
-            <h1 className='text-6xl mb-4 font-medium text-[#363636]'>1+</h1>
+            <h1 className='text-6xl mb-4 font-medium text-[#222222]'>1+</h1>
             <p className='text-center mx-20 text-black/70'>Years of Excellence in premium vehicle rentals.</p>
           </div>
           <div className="flex flex-col items-center justify-center border-x-2 border-gray-200">
-            <h1 className='text-6xl mb-4 font-medium text-[#363636]'>50+</h1>
+            <h1 className='text-6xl mb-4 font-medium text-[#222222]'>50+</h1>
             <p className='text-center mx-20 text-black/70'>Location nationwide for convenient pickup and drop-off.</p>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <h1 className='text-6xl mb-4 font-medium text-[#363636]'>100k+</h1>
+            <h1 className='text-6xl mb-4 font-medium text-[#222222]'>100k+</h1>
             <p className='text-center mx-20 text-black/70'>Kilometers driven by our satisfied community last year.</p>
           </div>
         </div>
-        <div className="grid grid-rows-2 shadow-2xl bg-[#222222] text-white p-7 rounded-[22px] w-full">
+        <div className="grid grid-rows-2 shadow-2xl bg-[#222222] text-white p-7 rounded-[22px] w-full mb-20">
           <div className="mt-5">
             <p className='bg-[#363636] px-5 py-2 rounded-full text-sm w-fit'>Services we provide</p>
             <div className="grid grid-cols-2 mt-5">
@@ -61,22 +63,100 @@ function App() {
             </div>
           </div>
           <div className="grid grid-cols-4 gap-4 mt-7">
-            <div className="ring-1 ring-white/70 p-5 rounded-2xl">
-              <p className='text-4xl text-white/80 bg-[#363636] w-fit p-7 rounded-full mb-4'><Ri24HoursLine /></p>
+            <div className="group ring-1 ring-white/70 p-5 rounded-2xl hover:bg-white/70 hover:text-[#222222] transition duration-200">
+              <p className='text-4xl group-hover:-rotate-35 transition-transform duration-400 text-white/80 bg-[#363636] w-fit p-7 rounded-full mb-4'><Ri24HoursLine /></p>
               <p>24-hours car delevery</p>
             </div>
-            <div className="ring-1 ring-white/70 p-5 rounded-2xl">
-              <p className='text-4xl text-white/80 bg-[#363636] w-fit p-7 rounded-full mb-4'><MdSupportAgent /></p>
+            <div className="group ring-1 ring-white/70 p-5 rounded-2xl hover:bg-white/70 hover:text-[#222222] transition duration-200">
+              <p className='text-4xl group-hover:-rotate-35 transition-transform duration-400 text-white/80 bg-[#363636] w-fit p-7 rounded-full mb-4'><MdSupportAgent /></p>
               <p>24/7 technical support</p>
             </div>
-            <div className="ring-1 ring-white/70 p-5 rounded-2xl">
-              <p className='text-4xl text-white/80 bg-[#363636] w-fit p-7 rounded-full mb-4'><BsLightningCharge /></p>
+            <div className="group ring-1 ring-white/70 p-5 rounded-2xl hover:bg-white/70 hover:text-[#222222] transition duration-200">
+              <p className='text-4xl group-hover:-rotate-35 transition-transform duration-400 text-white/80 bg-[#363636] w-fit p-7 rounded-full mb-4'><BsLightningCharge /></p>
               <p>All models have a premium package</p>
             </div>
-            <div className="ring-1 ring-white/70 p-5 rounded-2xl">
-              <p className='text-4xl text-white/80 bg-[#363636] w-fit p-7 rounded-full mb-4'><GoShieldCheck /></p>
+            <div className="group ring-1 ring-white/70 p-5 rounded-2xl hover:bg-white/70 hover:text-[#222222] transition duration-200">
+              <p className='text-4xl group-hover:-rotate-35 transition-transform duration-400 text-white/80 bg-[#363636] w-fit p-7 rounded-full mb-4'><GoShieldCheck /></p>
               <p>Absolute confidentiality</p>
             </div>
+          </div>
+        </div>
+        <div className="">
+          <div className="flex flex-col gap-5 items-center mb-12">
+            <p className='px-8 py-2 text-sm rounded-full bg-[#222222] text-white w-fit shadow'>Only the best cars</p>
+            <p className="text-8xl tracking-tight font-medium text-[#222222]">Our featured fleet</p>
+            <p className="text-center text-sm text-[#585858] -mt-1">We provide our customer with the most increadible driving emotions. That's why we have only world-class <br /> cars in our fleet.</p>
+          </div>
+          <div className="grid grid-cols-3 gap-5">
+            <div className="flex flex-col overflow-hidden ring-1 hover:-translate-y-1 transition-all duration-300 hover:shadow-2xl text-[#222222] ring-[#585858]/10 shadow-lg rounded-2xl">
+              <img src="https://cdn.pixabay.com/photo/2020/05/19/10/05/opel-5190050_1280.jpg" alt="Fleet" className='h-55 object-cover' />
+              <div className="p-5 text-[#222222]">
+                <p className="text-xl">Mobil Merah</p>
+                <p className="font-light text-sm">Sedan</p>
+                <div className="grid grid-cols-2 mt-5 text-[#585858]">
+                  <div className="text-sm font-light">
+                    <p className='flex items-center'><GoPeople className='me-2'/>2 Passengers</p>
+                    <p className='flex items-center'><PiGasPumpLight className='me-2'/>Gasoline</p>
+                  </div>
+                  <div className="text-sm font-light">
+                    <p className='flex items-center'><IoCarSportOutline className='me-2'/>Porsche</p>
+                    <p className='flex items-center'><TbManualGearbox className='me-2'/>Manual</p>
+                  </div>
+                </div>
+                <hr className='text-[#585858]/40 border my-5 mx-3'/>
+                <div className="flex items-center justify-between">
+                  <p className=''>Price</p>
+                  <p className='font-bold text-lg'>$120<span className='font-light text-sm ms-1'>/day</span></p>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col overflow-hidden ring-1 hover:-translate-y-1 transition-all duration-300 hover:shadow-2xl text-[#222222] ring-[#585858]/10 shadow-lg rounded-2xl">
+              <img src="https://cdn.pixabay.com/photo/2016/05/05/18/03/coupe-1374448_1280.jpg" alt="Fleet" className='h-55 object-cover' />
+              <div className="p-3">
+                <p className='text-xl'>Rolls-Royce Phantom</p>
+                <p className="font-light text-sm">Sedan</p>
+                <div className="grid grid-cols-2 mt-5 text-[#585858]">
+                  <div className="text-sm font-light">
+                    <p className='flex items-center'><GoPeople className='me-2'/>5 Passengers</p>
+                    <p className='flex items-center'><PiGasPumpLight className='me-2'/>Gasoline</p>
+                  </div>
+                  <div className="text-sm font-light">
+                    <p className='flex items-center'><IoCarSportOutline className='me-2'/>Rolls-Royce</p>
+                    <p className='flex items-center'><TbManualGearbox className='me-2'/>Automatic</p>
+                  </div>
+                </div>
+                <hr className='text-[#585858]/40 border my-5 mx-3'/>
+                <div className="flex items-center justify-between">
+                  <p className=''>Price</p>
+                  <p className='font-bold text-lg'>$530<span className='font-light text-sm ms-1'>/day</span></p>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col overflow-hidden ring-1 hover:-translate-y-1 transition-all duration-300 hover:shadow-2xl text-[#222222] ring-[#585858]/10 shadow-lg rounded-2xl">
+              <img src="https://cdn.pixabay.com/photo/2017/03/27/14/56/auto-2179220_1280.jpg" alt="Fleet" className='h-55 object-cover' />
+              <div className="p-3">
+                <p className='text-xl'>Mercedes Benz AMG</p>
+                <p className="font-light text-sm">Sedan</p>
+                <div className="grid grid-cols-2 mt-5 text-[#585858]">
+                  <div className="text-sm font-light">
+                    <p className='flex items-center'><GoPeople className='me-2'/>3 Passengers</p>
+                    <p className='flex items-center'><PiGasPumpLight className='me-2'/>Hybrid</p>
+                  </div>
+                  <div className="text-sm font-light">
+                    <p className='flex items-center'><IoCarSportOutline className='me-2'/>Mercedes Benz</p>
+                    <p className='flex items-center'><TbManualGearbox className='me-2'/>Manual</p>
+                  </div>
+                </div>
+                <hr className='text-[#585858]/40 border my-5 mx-3'/>
+                <div className="flex items-center justify-between">
+                  <p className=''>Price</p>
+                  <p className='font-bold text-lg'>$480<span className='font-light text-sm ms-1'>/day</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-center mt-8">
+            <Link to="/fleet" className='ring-1 ring-[#222222] text-[#222222] hover:bg-[#222222] hover:text-white transition-all ring-inset rounded-full px-5 py-1.5 w-fit flex items-center gap-2'>Show all vehicles <IoArrowForward /></Link>
           </div>
         </div>
       </div>
@@ -85,3 +165,4 @@ function App() {
 }
 
 export default App
+// gray text: text-[#585858]

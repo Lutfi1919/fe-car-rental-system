@@ -27,22 +27,22 @@ export default function Login() {
                             </div>
                         </div>
                         <div className='p-10 flex flex-col justify-center' style={{fontFamily: "Stack Sans Headline"}}>
-                            <p className='text-3xl mb-3'>Welcome back!</p>
-                            <p className='text-gray-400 font-satoshi font-medium'>Enter your email and password to access your account</p>
-                            <hr className='text-gray-200 border-t-2 my-10'/>
+                            <p className='text-3xl text-[#222222] mb-3'>Welcome back!</p>
+                            <p className='text-[#585858] font-satoshi font-medium'>Enter your email and password to access your <span className='italic text-[#363636] me-0.5' style={{fontFamily: "Anton"}}>InstaDrive.</span> account</p>
+                            <hr className='text-[#585858] border-t-2 my-10'/>
                             <form>
                                 <div className="mb-4">
-                                    <label className="block text-black text-sm font-bold mb-2" for="email">Your email</label>
+                                    <label className="block text-[#222222] text-sm font-bold mb-2" for="email">Your email</label>
                                     <input className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300" id="email" type="email" placeholder="instaDrive@email.com" />
                                 </div>
                                 <div className="mb-4">
-                                    <label className="block text-black text-sm font-bold mb-2" for="password">Your password</label>
+                                    <label className="block text-[#222222] text-sm font-bold mb-2" for="password">Your password</label>
                                     <input className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300" id="password" type="password" placeholder="••••••••••" />
                                 </div>  
-                                <button className="w-full bg-black text-white py-2 px-4 rounded-lg hover:bg-black/75 transition-all duration-150 cursor-pointer">Let's get started</button>
+                                <button className="w-full bg-[#222222] text-white py-2 px-4 rounded-lg hover:bg-black/75 transition-all duration-150 cursor-pointer">Let's get started</button>
                             </form>
                             <div className="flex items-center justify-center mt-3">
-                                <p className='text-center text-sm text-gray-400'>Don't have an account?</p>
+                                <p className='text-center text-sm text-[#585858]'>Don't have an account?</p>
                                 <Link to="/signup" className='text-sm underline ms-1 transition duration-150 hover:text-black/75'>Sign up</Link>
                             </div>
                         </div>
