@@ -28,7 +28,7 @@ export default function SignUp() {
                         </div>
                         <div className='p-10 flex flex-col justify-center' style={{fontFamily: "Stack Sans Headline"}}>
                             <p className='text-3xl mb-3 text-[#222222]'>Create an Account</p>
-                            <p className='text-[#585858] font-satoshi font-semibold'>Welcome to <span className='italic text-[#363636] me-0.5' style={{fontFamily: "Anton"}}>InstaDrive.</span> - Let's Get Started</p>
+                            <p className='text-[#585858] font-satoshi font-medium'>Welcome to <span className='italic text-[#363636] me-0.5' style={{fontFamily: "Anton"}}>InstaDrive.</span> - Let's Get Started</p>
                             <hr className='text-[#585858] border-t-2 my-10'/>
                             <form>
                                 <div className="mb-4">

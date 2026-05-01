@@ -184,7 +184,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="flex justify-center mt-8" data-aos="fade-in">
+          <div className="flex justify-center mt-8 mb-5" data-aos="fade-in">
             <Link to="/fleet" className='ring-1 ring-[#222222] text-[#222222] hover:bg-[#222222] hover:text-white transition-all ring-inset rounded-full px-5 py-1.5 w-fit flex items-center gap-2'>Show all vehicles <IoArrowForward /></Link>
           </div>
         </div>

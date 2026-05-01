@@ -5,6 +5,7 @@ import App from "../App";
 import Template from "../Template";
 import Catalog from "../pages/Catalog";
 import Fleet from "../pages/Fleet";
+import Profile from "../pages/Profile";
 
 export const router = createBrowserRouter([
     {
@@ -14,6 +15,7 @@ export const router = createBrowserRouter([
             { path: "/", element: <App /> },
             { path: "/catalog", element: <Catalog /> },
             { path: "/fleet", element: <Fleet /> },
+            { path: "/profile", element: <Profile /> },
         ]
     },
     {
