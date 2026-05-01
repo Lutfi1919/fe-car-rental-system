@@ -27,26 +27,26 @@ export default function NavbarComp() {
                 }`} style={{ fontFamily: "Stack Sans Headline" }}>                
                     <Link to="/" className="text-2xl italic" style={{fontFamily: "Anton"}}>InstaDrive.</Link>
                     <div className="flex items-center gap-10">
-                        <Link to="/" className={`flex items-center hover:opacity-100 transition duration-250 ${isActive("/") ? "opacity-100" : "opacity-50"}`}>{isActive("/") && <span className="text-2xl me-2">•</span>} Home</Link>
-                        <Link to="/catalog" className={`flex items-center hover:opacity-100 transition duration-250 ${isActive("/catalog") ? "opacity-100" : "opacity-50"}`}>{isActive("/catalog") && <span className="text-2xl me-2">•</span>} Catalog</Link>
-                        <Link to="/fleet" className={`flex items-center hover:opacity-100 transition duration-250 ${isActive("/fleet") ? "opacity-100" : "opacity-50"}`}>{isActive("/fleet") && <span className="text-2xl me-2">•</span>} Fleet</Link>
+                        <Link to="/" className={`relative flex items-center hover:opacity-100 transition duration-250 ${isActive("/") ? "opacity-100" : "opacity-50"}`}>{isActive("/") && <span className="absolute -left-3 text-2xl">•</span>} Home</Link>
+                        <Link to="/catalog" className={`relative flex items-center hover:opacity-100 transition duration-250 ${isActive("/catalog") ? "opacity-100" : "opacity-50"}`}>{isActive("/catalog") && <span className="absolute -left-3 text-2xl">•</span>} Catalog</Link>
+                        <Link to="/fleet" className={`relative flex items-center hover:opacity-100 transition duration-250 ${isActive("/fleet") ? "opacity-100" : "opacity-50"}`}>{isActive("/fleet") && <span className="absolute -left-3 text-2xl">•</span>} Fleet</Link>
                     </div>
                     <div className="flex items-center gap-1">
-                        <Link to="/signup" className="px-7 py-1.5 transition duration-150 rounded-full ring-1 ring-inset hover:ring-white hover:bg-white hover:text-black hover:-translate-y-1">Sign up</Link>
-                        <Link to="/login" className="bg-white text-black hover:text-white px-7 py-1.5 transition duration-150 rounded-full hover:bg-transparent hover:ring-1 hover:ring-inset hover:-translate-y-1">Login</Link>
+                        <Link to="/signup" className="px-7 py-1.5 transition duration-150 rounded-full ring-1 ring-inset hover:ring-white hover:bg-white hover:text-black hover:-translate-y-0.5">Sign up</Link>
+                        <Link to="/login" className="bg-white text-black hover:text-white px-7 py-1.5 transition duration-150 rounded-full hover:bg-transparent hover:ring-1 hover:ring-inset hover:-translate-y-0.5">Login</Link>
                     </div>
                 </div> 
                 :
                 <div className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 mx-8 mt-4 rounded-2xl flex items-center justify-between px-7 py-3 bg-[#222222] text-white shadow-lg" style={{ fontFamily: "Stack Sans Headline" }}>                
                     <Link to="/" className="text-2xl italic" style={{fontFamily: "Anton"}}>InstaDrive.</Link>
                     <div className="flex items-center gap-10">
-                        <Link to="/" className={`flex items-center hover:opacity-100 transition-all duration-250 ${isActive("/") ? "opacity-100" : "opacity-50"}`}>{isActive("/") && <span className="text-2xl me-2">•</span>} Home</Link>
-                        <Link to="/catalog" className={`flex items-center hover:opacity-100 transition-all duration-250 ${isActive("/catalog") ? "opacity-100" : "opacity-50"}`}>{isActive("/catalog") && <span className="text-2xl me-2">•</span>} Catalog</Link>
-                        <Link to="/fleet" className={`flex items-center hover:opacity-100 transition-all duration-250 ${isActive("/fleet") ? "opacity-100" : "opacity-50"}`}>{isActive("/fleet") && <span className="text-2xl me-2">•</span>} Fleet</Link>
+                        <Link to="/" className={`relative flex items-center hover:opacity-100 transition-all duration-250 ${isActive("/") ? "opacity-100" : "opacity-50"}`}>{isActive("/") && <span className="absolute -left-3 text-2xl">•</span>} Home</Link>
+                        <Link to="/catalog" className={`relative flex items-center hover:opacity-100 transition-all duration-250 ${isActive("/catalog") ? "opacity-100" : "opacity-50"}`}>{isActive("/catalog") && <span className="absolute -left-3 text-2xl">•</span>} Catalog</Link>
+                        <Link to="/fleet" className={`relative flex items-center hover:opacity-100 transition-all duration-250 ${isActive("/fleet") ? "opacity-100" : "opacity-50"}`}>{isActive("/fleet") && <span className="absolute -left-3 text-2xl">•</span>} Fleet</Link>
                     </div>
                     <div className="flex items-center gap-1">
-                        <Link to="/signup" className="px-7 py-1.5 transition-all duration-150 rounded-full ring-1 ring-inset hover:ring-white hover:bg-white hover:text-black hover:-translate-y-1">Sign up</Link>
-                        <Link to="/login" className="bg-white text-black hover:text-white px-7 py-1.5 transition-all duration-150 rounded-full hover:bg-transparent hover:ring-1 hover:ring-inset hover:-translate-y-1">Login</Link>
+                        <Link to="/signup" className="px-7 py-1.5 transition-all duration-150 rounded-full ring-1 ring-inset hover:ring-white hover:bg-white hover:text-black hover:-translate-y-0.5">Sign up</Link>
+                        <Link to="/login" className="bg-white text-black hover:text-white px-7 py-1.5 transition-all duration-150 rounded-full hover:bg-transparent hover:ring-1 hover:ring-inset hover:-translate-y-0.5">Login</Link>
                     </div>
                 </div> 
 

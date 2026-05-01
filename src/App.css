@@ -4,5 +4,4 @@ img {
   -moz-user-drag: none;
   -o-user-drag: none;
   user-select: none;
-  pointer-events: none;
 }
