@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: Satoshi;
+  src: url("../src/assets/fonts/SatoshiVariable.ttf");
+}
+
+@theme {
+  --font-satoshi: "Satoshi", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
