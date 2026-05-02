@@ -18,7 +18,7 @@ export default function SignUp() {
             <div className="h-screen p-10">
                 <div className="bg-white rounded-2xl overflow-hidden shadow-2xl" data-aos="fade-in">
                     <div className="grid grid-cols-2 gap-2">
-                        <div className="relative h-[600px] w-full"> 
+                        <div className="relative w-full"> 
                             <img className='absolute w-full h-full object-cover' src={porsche} alt="porsche"/>
                             <div className="absolute inset-0 bg-black/30"></div>
                             <div className="relative h-full flex flex-col justify-end p-5 text-white">
@@ -34,6 +34,10 @@ export default function SignUp() {
                                 <div className="mb-4">
                                     <label className="block text-[#222222] text-sm font-bold mb-2" for="name">Your name</label>
                                     <input className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300" id="name" type="text" placeholder="Luthfi Ahmad" />
+                                </div>
+                                <div className="mb-4">
+                                    <label className="block text-[#222222] text-sm font-bold mb-2" for="phone_num">Your phone number</label>
+                                    <input className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300" id="phone_num" type="number" maxLength={12} placeholder="0878 7522 1858" />
                                 </div>
                                 <div className="mb-4">
                                     <label className="block text-[#222222] text-sm font-bold mb-2" for="email">Your email</label>

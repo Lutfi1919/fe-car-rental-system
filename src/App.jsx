@@ -129,7 +129,7 @@ function App() {
                   <p className='font-bold text-lg'><span className='text-[#85BB65]'>$220</span><span className='font-light text-sm ms-1'>/day</span></p>
                 </div>
                 <div className="flex justify-end">
-                  <Link to="/" className='hover:ring-1 hover:ring-[#222222] hover:ring-inset hover:bg-transparent transition duration-300 hover:text-[#222222] bg-[#222222] text-white text-sm px-5 py-2 rounded-full flex items-center'>Rent now <IoArrowForward className='ms-2'/></Link>
+                  <Link to="/" className='hover:ring-1 hover:ring-[#222222] hover:ring-inset hover:bg-transparent transition duration-300 hover:text-[#222222] bg-[#222222] text-white text-sm px-5 py-2 rounded-full flex items-center hover:shadow-lg'>Rent now <IoArrowForward className='ms-2'/></Link>
                 </div>
               </div>
             </div>
@@ -154,7 +154,7 @@ function App() {
                   <p className='font-bold text-lg'><span className='text-[#85BB65]'>$530</span><span className='font-light text-sm ms-1'>/day</span></p>
                 </div>
                 <div className="flex justify-end">
-                  <Link to="/" className='hover:ring-1 hover:ring-[#222222] hover:ring-inset hover:bg-transparent transition duration-300 hover:text-[#222222] bg-[#222222] text-white text-sm px-5 py-2 rounded-full flex items-center'>Rent now <IoArrowForward className='ms-2'/></Link>
+                  <Link to="/" className='hover:ring-1 hover:ring-[#222222] hover:ring-inset hover:bg-transparent transition duration-300 hover:text-[#222222] bg-[#222222] text-white text-sm px-5 py-2 rounded-full flex items-center hover:shadow-lg'>Rent now <IoArrowForward className='ms-2'/></Link>
                 </div>
               </div>
             </div>
@@ -179,7 +179,7 @@ function App() {
                   <p className='font-bold text-lg'><span className='text-[#85BB65]'>$480</span><span className='font-light text-sm ms-1'>/day</span></p>
                 </div>
                 <div className="flex justify-end">
-                  <Link to="/" className='hover:ring-1 hover:ring-[#222222] hover:ring-inset hover:bg-transparent transition duration-300 hover:text-[#222222] bg-[#222222] text-white text-sm px-5 py-2 rounded-full flex items-center'>Rent now <IoArrowForward className='ms-2'/></Link>
+                  <Link to="/" className='hover:ring-1 hover:ring-[#222222] hover:ring-inset hover:bg-transparent transition duration-300 hover:text-[#222222] bg-[#222222] text-white text-sm px-5 py-2 rounded-full flex items-center hover:shadow-lg'>Rent now <IoArrowForward className='ms-2'/></Link>
                 </div>            
               </div>
             </div>
