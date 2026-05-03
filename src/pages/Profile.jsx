@@ -21,11 +21,11 @@ export default function Profile() {
 
     return (
         <>
-            <div className="mb-7">
+            <div className="mb-7" data-aos="fade-in">
                 <p className="text-6xl tracking-tight font-medium">Account Settings.</p>
                 <p className="text-[#585858] font-satoshi font-medium">Manage your account and car rental preferences</p>
             </div>
-            <div className="flex gap-5 mb-5">
+            <div className="flex gap-5 mb-5" data-aos="fade-in">
                 <div className="">
                     <div className="p-6 rounded-2xl ring ring-[#585858]/10 ring-inset h-fit hover:shadow-xl transition duration-300">
                         <p className="flex items-center gap-3 mb-3 text-2xl"><PiIdentificationCardLight className="text-2xl"/> Personal information</p>

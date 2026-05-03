@@ -42,7 +42,7 @@ function App() {
           <div className="relative p-8 mt-30">
             <h1 className='text-white font-medium text-7xl mb-5 tracking-tight' style={{fontFamily: "Stack Sans Headline"}}>Find, Reserve, & <br /> Hire Vehicle Easily.</h1>
             <p className='text-white/80 leading-tight font-satoshi w-120 mb-6'>From luxury sedans for business to rugged SUVs for family adventures, InstaRide offers the largest selection of premium vehicles at unbeatable daily rates.</p>
-            <Link to="/fleet" className='bg-white w-fit ps-5 pe-1.5 text-sm py-1 mt-3 rounded-full flex items-center hover:bg-[#222222] hover:text-white transition-all duration-150 cursor-pointer group'>Rent a car <span className='ms-5 bg-[#222222] rounded-full p-3 text-white -rotate-40 group-hover:rotate-0 transition duration-300'><IoArrowForward /></span></Link>;
+            <a href="#car" className='bg-white w-fit ps-5 pe-1.5 text-sm py-1 mt-3 rounded-full flex items-center hover:bg-[#222222] hover:text-white transition-all duration-150 cursor-pointer group'>Rent a car <span className='ms-5 bg-[#222222] rounded-full p-3 text-white -rotate-40 group-hover:rotate-0 transition duration-300'><IoArrowForward /></span></a>;
             <div className="mt-5 flex items-center">
               <img src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D" alt="users" className='w-9 h-9 border-2 border-white rounded-full object-cover' />
               <img src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?semt=ais_hybrid&w=740&q=80" alt="users" className='w-9 h-9 border-2 border-white -translate-x-3 rounded-full object-cover' />
@@ -101,7 +101,7 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="" id="car">
           <div className="flex flex-col gap-5 items-center mb-12" id="car" data-aos="fade-in">
             <p className='px-8 py-2 text-sm rounded-full bg-[#222222] text-white w-fit shadow'>Only the best cars</p>
             <p className="text-8xl tracking-tight font-medium text-[#222222]">Our featured fleet</p>
