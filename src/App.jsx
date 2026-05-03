@@ -193,8 +193,9 @@ function App() {
         <img src={sideGrayCar} alt="gray car" className='-translate-x-40 hover:-translate-x-20 transition duration-500 object-cover'/>
         <div className="flex flex-col justify-center items-center shrink-0" data-aos="fade-in">
           <img src={devGanteng} alt="dev ganteng" className='rounded-full w-30 h-30 object-cover shadow-lg animate-spin [animation-duration:6s]'/>
-          <p className='mt-5 mb-3 text-[#585858]'>Have any question?</p>
+          <p className='mt-5 mb-3 text-[#585858]'>Mao nanya kaga mpruy?</p>
           <p className='text-2xl'>(+62) 878-7522-1858</p>
+          <p className='text-lg mt-1'>luthfiamad19@gmail.com</p>
         </div>
         <img src={sideBlueCar} alt="blue car" className='translate-x-40 hover:translate-x-20 transition duration-500 object-cover'/>
       </div>

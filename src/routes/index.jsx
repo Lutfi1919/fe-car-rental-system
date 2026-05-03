@@ -6,6 +6,9 @@ import Template from "../Template";
 import Catalog from "../pages/Catalog";
 import Fleet from "../pages/Fleet";
 import Profile from "../pages/Profile";
+import NavbarProfileComp from "../components/NavbarProfileComp";
+import Bookings from "../pages/Bookings";
+import PaymentHistory from "../pages/PaymentHistory";
 
 export const router = createBrowserRouter([
     {
@@ -15,7 +18,15 @@ export const router = createBrowserRouter([
             { path: "/", element: <App /> },
             { path: "/catalog", element: <Catalog /> },
             { path: "/fleet", element: <Fleet /> },
-            { path: "/profile", element: <Profile /> },
+            { 
+                path: "/profile", 
+                element: <NavbarProfileComp />,
+                children: [
+                    { path: "/profile", element: <Profile /> },
+                    { path: "booking", element: <Bookings /> },
+                    { path: "payment_history", element: <PaymentHistory /> }
+                ]
+            },
         ]
     },
     {
