@@ -31,7 +31,7 @@ export default function PaymentHistory() {
                         </div>
                         <hr className="text-[#585858]/10 border-t-2" />
                         <div className="">
-                            <div className="flex justify-between">
+                            <div className="flex justify-between"> 
                                 <p>Porsche 911</p>
                                 <p className="font-semibold">$515,00</p>
                             </div>
