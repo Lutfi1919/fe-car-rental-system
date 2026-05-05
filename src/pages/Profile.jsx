@@ -53,7 +53,7 @@ export default function Profile() {
                         <div className="flex items-center mt-9 mb-5 justify-between">
                             <p className="text-2xl tracking-tight font-medium">My Bookings.</p>
                             <div className="flex justify-center">
-                                <Link to="booking" className='ring-1 ring-[#222222] text-[#222222] hover:bg-[#222222] hover:text-white transition-all ring-inset rounded-full px-5 py-1.5 w-fit flex items-center gap-2 text-sm'>Show all bookings <IoArrowForward /></Link>
+                                <Link to="bookings" className='ring-1 ring-[#222222] text-[#222222] hover:bg-[#222222] hover:text-white transition-all ring-inset rounded-full px-5 py-1.5 w-fit flex items-center gap-2 text-sm'>Show all bookings <IoArrowForward /></Link>
                             </div>
                         </div>
                         <div className="grid grid-cols-2 gap-5">

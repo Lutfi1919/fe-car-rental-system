@@ -9,6 +9,7 @@ import Profile from "../pages/Profile";
 import NavbarProfileComp from "../components/NavbarProfileComp";
 import Bookings from "../pages/Bookings";
 import PaymentHistory from "../pages/PaymentHistory";
+import DetailBooking from "../pages/DetailBooking";
 
 export const router = createBrowserRouter([
     {
@@ -23,8 +24,9 @@ export const router = createBrowserRouter([
                 element: <NavbarProfileComp />,
                 children: [
                     { path: "/profile", element: <Profile /> },
-                    { path: "booking", element: <Bookings /> },
-                    { path: "payment_history", element: <PaymentHistory /> }
+                    { path: "bookings", element: <Bookings /> },
+                    { path: "payment_history", element: <PaymentHistory /> },
+                    { path: "booking_detail", element: <DetailBooking /> },
                 ]
             },
         ]

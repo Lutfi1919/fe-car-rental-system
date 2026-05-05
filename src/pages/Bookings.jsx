@@ -3,8 +3,9 @@ import { GoDownload, GoHistory } from "react-icons/go";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import orangeCar from '../assets/orangecar.jpg';
-import { IoCalendarOutline } from "react-icons/io5";
+import { IoArrowForward, IoCalendarOutline } from "react-icons/io5";
 import { LiaMoneyBillWaveSolid } from "react-icons/lia";
+import { Link } from "react-router-dom";
 
 export default function Bookings() {
     useEffect(() => {
@@ -62,7 +63,9 @@ export default function Bookings() {
                                 </div>
                             </div>
                             <hr className="my-3 border-[#585858]/10"/>
-                            
+                            <div className="flex justify-end">
+                                <Link to="/" className='hover:ring-1 hover:ring-[#222222] hover:ring-inset hover:bg-transparent transition duration-300 hover:text-[#222222] bg-[#222222] text-white text-sm px-5 py-2 rounded-full flex items-center hover:shadow-lg'>Details <IoArrowForward className='ms-2'/></Link>
+                            </div>
                         </div>
                     </div>
                     <div className="rounded-2xl ring ring-[#585858]/10 ring-inset p-5 flex hover:shadow-lg transition duration-300">
@@ -96,6 +99,9 @@ export default function Bookings() {
                                 </div>
                             </div>
                             <hr className="my-3 border-[#585858]/10"/>
+                            <div className="flex justify-end">
+                                <Link to="/profile/booking_detail" className='hover:ring-1 hover:ring-[#222222] hover:ring-inset hover:bg-transparent transition duration-300 hover:text-[#222222] bg-[#222222] text-white text-sm px-5 py-2 rounded-full flex items-center hover:shadow-lg'>Details <IoArrowForward className='ms-2'/></Link>
+                            </div>
                         </div>
                     </div>
                     <div className="rounded-2xl ring ring-[#585858]/10 ring-inset p-5 flex hover:shadow-lg transition duration-300">
@@ -117,18 +123,21 @@ export default function Bookings() {
                                     <IoCalendarOutline className="text-[#222222]/40 text-xl me-2" />
                                     <div className="">
                                         <p className="text-xs text-[#585858]/60">Rental Period</p>
-                                        <p className="text-[#222222]/40">Apr 28 - May 01, 2026</p>
+                                        <p className="text-[#222222]/40">Feb 08 - Feb 13, 2026</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center">
                                     <LiaMoneyBillWaveSolid className="text-[#222222]/40 text-xl me-2" />
                                     <div className="">
                                         <p className="text-xs text-[#585858]/60">Total Price</p>
-                                        <p className="text-[#222222]/40">$1,200.00</p>
+                                        <p className="text-[#222222]/40">$2,340.00</p>
                                     </div>
                                 </div>
                             </div>
                             <hr className="my-3 border-[#585858]/10"/>
+                            <div className="flex justify-end">
+                                <Link to="/" className='hover:ring-1 hover:ring-[#222222] hover:ring-inset hover:bg-transparent transition duration-300 hover:text-[#222222] bg-[#222222] text-white text-sm px-5 py-2 rounded-full flex items-center hover:shadow-lg'>Details <IoArrowForward className='ms-2'/></Link>
+                            </div>
                         </div>
                     </div>
                 </div>
