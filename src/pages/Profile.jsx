@@ -23,13 +23,31 @@ export default function Profile() {
         <>
             <div className="mb-7" data-aos="fade-in">
                 <p className="text-6xl tracking-tight font-medium">Account Settings.</p>
-                <p className="text-[#585858] font-satoshi font-medium">Manage your account and car rental preferences</p>
+                <p className="text-[#585858] mt-2">Manage your account and car rental preferences</p>
             </div>
             <div className="flex gap-5 mb-5" data-aos="fade-in">
                 <div className="">
                     <div className="p-6 rounded-2xl ring ring-[#585858]/10 ring-inset h-fit hover:shadow-xl transition duration-300">
-                        <p className="flex items-center gap-3 mb-3 text-2xl"><PiIdentificationCardLight className="text-2xl"/> Personal information</p>
-                        <p className="text-[15px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum cumque vel eaque earum necessitatibus non sit molestiae debitis consequuntur assumenda a eum accusantium vitae architecto cum nobis iure, nulla pariatur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi ullam sed, asperiores perferendis a est culpa cum laborum ex nisi iste dolore explicabo mollitia nulla et, aliquam tempore id maxime. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque officiis incidunt architecto, neque veritatis perferendis provident necessitatibus sit similique quidem itaque at magni harum, aliquid praesentium ducimus ipsam ipsum numquam!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta voluptatem nemo, accusantium recusandae necessitatibus nesciunt maxime cupiditate nulla ratione labore ipsum minima laborum architecto deleniti explicabo beatae quo, quidem quaerat.</p>
+                        <p className="flex items-center gap-3 mb-8 text-2xl"><PiIdentificationCardLight className="text-2xl"/> Personal Information</p>
+                        <div className="text[15px]">
+                            <form>
+                                <div className="grid grid-cols-2 gap-5">
+                                    <div className="">
+                                        <label className="block text-[#222222] text-sm mb-2" for="name">Full Name</label>
+                                        <input className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300" id="name" type="text" placeholder="Luthfi Ahmad" />
+                                    </div>  
+                                    <div className="">
+                                        <label className="block text-[#222222] text-sm mb-2" for="email">Email Address</label>
+                                        <input className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300" id="email" type="email" placeholder="adew19@email.com" />
+                                    </div>
+                                    <div className="mb-5 col-span-2">
+                                        <label className="block text-[#222222] text-sm mb-2" for="phone_num">Phone Number</label>
+                                        <input className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300" id="phone_num" type="number" placeholder="0878-7522-1858" />
+                                    </div>  
+                                </div>
+                                    <button className="bg-[#222222] text-sm text-white py-2 px-4 rounded-lg hover:ring hover:ring-inset hover:ring-[#222222] hover:text-[#222222] hover:bg-transparent transition-all duration-150 cursor-pointer">Edit information</button>
+                            </form>
+                        </div>
                     </div>
                     <div className="" data-aos="fade-in">
                         <div className="flex items-center mt-9 mb-5 justify-between">
@@ -75,7 +93,7 @@ export default function Profile() {
                         <div className="">
                             <div className="flex justify-between">
                                 <p>Porsche 911</p>
-                                <p className="font-semibold">$515,00</p>
+                                <p className="font-medium">$515,00</p>
                             </div>
                             <div className="mt-1 text-[#585858] text-xs flex items-center justify-between">
                                 <p>Mar 18, 2026</p>
@@ -85,7 +103,7 @@ export default function Profile() {
                         <div className="">
                             <div className="flex justify-between">
                                 <p>Porsche 911</p>
-                                <p className="font-semibold">$515,00</p>
+                                <p className="font-medium">$515,00</p>
                             </div>
                             <div className="mt-1 text-[#585858] text-xs flex items-center justify-between">
                                 <p>Mar 18, 2026</p>
@@ -95,7 +113,7 @@ export default function Profile() {
                         <div className="">
                             <div className="flex justify-between">
                                 <p>Porsche 911</p>
-                                <p className="font-semibold">$515,00</p>
+                                <p className="font-medium">$515,00</p>
                             </div>
                             <div className="mt-1 text-[#585858] text-xs flex items-center justify-between">
                                 <p>Mar 18, 2026</p>

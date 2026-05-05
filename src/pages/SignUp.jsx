@@ -47,7 +47,7 @@ export default function SignUp() {
                                     <label className="block text-[#222222] text-sm font-bold mb-2" for="password">Create new password</label>
                                     <input className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300" id="password" type="password" placeholder="••••••••••" />
                                 </div>  
-                                <button type='submit' className="w-full bg-[#222222] text-white py-2 px-4 rounded-lg hover:bg-black/75 transition-all duration-150 cursor-pointer">Create new account</button>
+                                <button type='submit' className="w-full bg-[#222222] text-white py-2 px-4 rounded-lg hover:ring hover:ring-inset hover:ring-[#222222] hover:text-[#222222] hover:bg-transparent transition-all duration-150 cursor-pointer">Create new account</button>
                             </form>
                             <div className="flex items-center justify-center mt-3">
                                 <p className='text-center text-sm text-[#585858]'>Already have an account?</p>

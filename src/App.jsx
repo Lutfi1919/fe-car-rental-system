@@ -42,8 +42,8 @@ function App() {
           <div className="relative p-8 mt-30">
             <h1 className='text-white font-medium text-7xl mb-5 tracking-tight' style={{fontFamily: "Stack Sans Headline"}}>Find, Reserve, & <br /> Hire Vehicle Easily.</h1>
             <p className='text-white/80 leading-tight font-satoshi w-120 mb-6'>From luxury sedans for business to rugged SUVs for family adventures, InstaRide offers the largest selection of premium vehicles at unbeatable daily rates.</p>
-            <a href="#car" className='bg-white w-fit ps-5 pe-1.5 text-sm py-1 mt-3 rounded-full flex items-center hover:bg-[#222222] hover:text-white transition-all duration-150 cursor-pointer group'>Rent a car <span className='ms-5 bg-[#222222] rounded-full p-3 text-white -rotate-40 group-hover:rotate-0 transition duration-300'><IoArrowForward /></span></a>;
-            <div className="mt-5 flex items-center">
+            <a href="#car" className='bg-white w-fit ps-5 pe-1.5 text-sm py-1 mt-3 rounded-full flex items-center hover:bg-[#222222] hover:text-white transition-all duration-150 cursor-pointer group'>Rent a car <span className='ms-5 bg-[#222222] rounded-full p-3 text-white -rotate-40 group-hover:rotate-0 transition-all duration-300'><IoArrowForward /></span></a>
+            <div className="mt-10 flex items-center">
               <img src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D" alt="users" className='w-9 h-9 border-2 border-white rounded-full object-cover' />
               <img src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?semt=ais_hybrid&w=740&q=80" alt="users" className='w-9 h-9 border-2 border-white -translate-x-3 rounded-full object-cover' />
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCIyTZVXyb90oYHRiiX6YkNUc0CnzGwWjI3Q&s" alt="users" className='w-9 h-9 border-2 border-white -translate-x-6 rounded-full object-cover' />
@@ -189,9 +189,9 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="flex flex-row h-120 -my-10 justify-center overflow-hidden  text-[#222222]" style={{fontFamily: "Stack Sans Headline"}}>
+      <div className="flex flex-row h-120 -my-10 justify-center overflow-hidden  text-[#222222]" style={{fontFamily: "Stack Sans Headline"}} data-aos="fade-in">
         <img src={sideGrayCar} alt="gray car" className='-translate-x-40 hover:-translate-x-20 transition duration-500 object-cover'/>
-        <div className="flex flex-col justify-center items-center shrink-0" data-aos="fade-in">
+        <div className="flex flex-col justify-center items-center shrink-0">
           <img src={devGanteng} alt="dev ganteng" className='rounded-full w-30 h-30 object-cover shadow-lg animate-spin [animation-duration:6s]'/>
           <p className='mt-5 mb-3 text-[#585858]'>Mao nanya kaga mpruy?</p>
           <p className='text-2xl'>(+62) 878-7522-1858</p>
