@@ -10,6 +10,7 @@ import NavbarProfileComp from "../components/NavbarProfileComp";
 import Bookings from "../pages/Bookings";
 import PaymentHistory from "../pages/PaymentHistory";
 import DetailBooking from "../pages/DetailBooking";
+import Verify from "../pages/Verify";
 
 export const router = createBrowserRouter([
     {
@@ -24,6 +25,7 @@ export const router = createBrowserRouter([
                 element: <NavbarProfileComp />,
                 children: [
                     { path: "/profile", element: <Profile /> },
+                    { path: "verification", element: <Verify /> },
                     { path: "bookings", element: <Bookings /> },
                     { path: "payment_history", element: <PaymentHistory /> },
                     { path: "booking_detail", element: <DetailBooking /> },

@@ -7,6 +7,7 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import { IoIosLogOut } from "react-icons/io";
 import { GoHistory } from "react-icons/go";
+import { CiCircleCheck, CiCircleMinus, CiCircleRemove } from "react-icons/ci";
 
 export default function NavbarProfileComp() {
     const location = useLocation();
@@ -26,12 +27,16 @@ export default function NavbarProfileComp() {
                     <img src={devGanteng} alt="poto propil" className="w-22 h-22 object-cover rounded-full shadow-lg"/>
                     <p className="mt-3 text-xl truncate max-w-70">Luthfi Ahmad</p>
                     <p className="text-sm font-light truncate max-w-70 text-[#585858]">adew19@gmail.com</p>
+                    {/* <p className="text-xs mt-2 font-light truncate max-w-70 bg-gray-400/20 text-gray-600 px-3 py-1 rounded-full flex items-center"><CiCircleMinus className="me-1"/>Unverified</p> */}
+                    <p className="text-xs mt-2 font-light truncate max-w-70 bg-green-400/20 text-green-600 px-3 py-1 rounded-full flex items-center"><CiCircleCheck className="me-1"/>Verified</p>
+                    {/* <p className="text-xs mt-2 font-light truncate max-w-70 bg-red-400/20 text-red-600 px-3 py-1 rounded-full flex items-center"><CiCircleRemove className="me-1"/>Rejected</p> */}
                     <div className="mt-15 flex mb-20 flex-col self-start gap-5 text-[#222222]">
                         <Link to="/profile" className={`flex items-center gap-3 transition duration-300 hover:opacity-100 relative ${isActive("/profile") ? 'opacity-100' : 'opacity-65'}`}><IoPersonOutline />Profile Settings {isActive("/profile") && <span className="absolute -right-8 text-2xl">•</span>}</Link>
                         <Link to="bookings" className={`flex items-center gap-3 transition duration-300 hover:opacity-100 relative ${isActive("/profile/bookings") || isActive("/profile/booking_detail")  ? 'opacity-100' : 'opacity-65'}`}><IoCalendarOutline />My Bookings {(isActive("/profile/bookings") || isActive("/profile/booking_detail")) && <span className="absolute -right-8 text-2xl">•</span>}</Link>
                         <Link to="payment_history" className={`flex items-center gap-3 transition duration-300 hover:opacity-100 relative ${isActive("/profile/payment_history") ? 'opacity-100' : 'opacity-65'}`}><PiMoneyWavyLight />Payment History {isActive("/profile/payment_history") && <span className="absolute -right-8 text-2xl">•</span>}</Link>
                     </div>
                     <Link to="/" className='w-full mt-auto hover:ring-1 hover:ring-[#222222] hover:ring-inset hover:bg-transparent transition duration-300 hover:text-[#222222] bg-[#222222] text-white text-sm px-5 py-2 rounded-full flex justify-between items-center hover:shadow-lg mb-3'>Logout <IoIosLogOut className='ms-2'/></Link>
+                    <Link to="verification" className='w-full hover:ring-1 hover:ring-[#222222] hover:ring-inset hover:bg-transparent transition duration-300 hover:text-[#222222] bg-[#222222] text-white text-sm px-5 py-2 rounded-full flex justify-between items-center hover:shadow-lg  mb-3'>Get verified <IoArrowForward className='ms-2'/></Link>
                     <Link to="/fleet" className='w-full hover:ring-1 hover:ring-[#222222] hover:ring-inset hover:bg-transparent transition duration-300 hover:text-[#222222] bg-[#222222] text-white text-sm px-5 py-2 rounded-full flex justify-between items-center hover:shadow-lg'>Book new ride <IoArrowForward className='ms-2'/></Link>
                 </div>
                 <div className="flex-1 ps-7 pe-5">
