@@ -6,7 +6,7 @@ import Template from "../Template";
 import Catalog from "../pages/Catalog";
 import Fleet from "../pages/Fleet";
 import Profile from "../pages/Profile";
-import NavbarProfileComp from "../components/NavbarProfileComp";
+import SidebarComp from "../components/SidebarComp";
 import Bookings from "../pages/Bookings";
 import PaymentHistory from "../pages/PaymentHistory";
 import DetailBooking from "../pages/DetailBooking";
@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
             { path: "/fleet", element: <Fleet /> },
             { 
                 path: "/profile", 
-                element: <NavbarProfileComp />,
+                element: <SidebarComp />,
                 children: [
                     { path: "/profile", element: <Profile /> },
                     { path: "verification", element: <Verify /> },
