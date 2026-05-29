@@ -5,6 +5,32 @@ export default function NavbarComp() {
     const [isScrolled, setIsScrolled] = useState(false);
     const location = useLocation();
     const token = localStorage.getItem("token");
+    const [profile, setProfile] = useState({});
+
+    async function getUser() {
+        const url = "http://localhost:4000/users/profile";
+        try {
+            const token = localStorage.getItem("token");
+            const response = await fetch(url, {
+                headers: {
+                    Authorization: token
+                }
+            });
+            if (!response.ok) {
+                throw new Error(`Response status: ${response.status}`);
+            }
+        
+            const result = await response.json();
+            setProfile(result.data);
+
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
+
+    useEffect(() => {
+        getUser();
+    }, [])
 
     useEffect(() => {
         const handleScroll = () => {
@@ -33,16 +59,15 @@ export default function NavbarComp() {
                 </div>
                 {
                     !token ? 
-                        <div className="flex items-center gap-1">
-                            <Link to="/signup" className="px-7 py-1.5 transition duration-150 rounded-full ring-1 ring-inset hover:ring-white hover:bg-white hover:text-black hover:-translate-y-0.5">Sign up</Link>
-                            <Link to="/login" className="bg-white text-black hover:text-white px-7 py-1.5 transition duration-150 rounded-full hover:bg-transparent hover:ring-1 hover:ring-inset hover:-translate-y-0.5">Login</Link>
-                        </div>
-                        :
-                        <div className="flex items-center gap-1">
-                            <Link to="/profile" className="px-7 py-1.5 transition duration-150 rounded-full ring-1 ring-inset hover:ring-white hover:bg-white hover:text-black hover:-translate-y-0.5">Profile</Link>
-                        </div>
+                    <div className="flex items-center gap-1">
+                        <Link to="/signup" className="px-7 py-1.5 transition duration-150 rounded-full ring-1 ring-inset hover:ring-white hover:bg-white hover:text-black hover:-translate-y-0.5">Sign up</Link>
+                        <Link to="/login" className="bg-white text-black hover:text-white px-7 py-1.5 transition duration-150 rounded-full hover:bg-transparent hover:ring-1 hover:ring-inset hover:-translate-y-0.5">Login</Link>
+                    </div>
+                    :
+                    <div className="flex items-center gap-1">
+                        <Link to={profile.role == 'user' ? "/profile" : "/dashboard"} className="px-7 py-1.5 transition duration-150 rounded-full ring-1 ring-inset hover:ring-white hover:bg-white hover:text-black hover:-translate-y-0.5">{profile.role == 'user' ? "Profile" : "Dashboard"}</Link>
+                    </div>
                 }
-                
             </div>
         </div> 
     )

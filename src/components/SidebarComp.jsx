@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import { IoIosLogOut } from "react-icons/io";
 import { GoHistory } from "react-icons/go";
 import { CiCircleCheck, CiCircleInfo, CiCircleMinus, CiCircleRemove, CiGrid31 } from "react-icons/ci";
+import { FiUsers } from "react-icons/fi";
 
 export default function SidebarComp() {
     const location = useLocation();
@@ -34,7 +35,6 @@ export default function SidebarComp() {
             }
         
             const result = await response.json();
-            console.log(result);
             setProfile(result.data);
         } catch (error) {
             console.error(error.message);
@@ -57,7 +57,7 @@ export default function SidebarComp() {
             <div className="pt-25 flex min-h-screen text-[#222222]" style={{fontFamily: "Stack Sans Headline"}} data-aos="fade-in">
                 <div className="shrink-0 flex flex-col items-center p-10 border-e-2 border-[#585858]/10 w-70 max-w-200">
                     <img src={profile.profile_image} alt="poto propil" className="w-22 h-22 object-cover rounded-full shadow-lg"/>
-                    <p className="mt-3 text-xl truncate max-w-70">{profile.name}</p>
+                    <p className="mt-3 text-xl truncate max-w-70 capitalize">{profile.name}</p>
                     <p className="text-sm font-light truncate max-w-70 text-[#585858]">{profile.email}</p>
                     {
                         profile.is_verified === 'unverified' && (
@@ -88,9 +88,10 @@ export default function SidebarComp() {
                         </div>
                         :
                         <div className="mt-15 flex mb-20 flex-col self-start gap-5 text-[#222222]">
-                            <Link to="/profile" className={`flex items-center gap-3 transition duration-300 hover:opacity-100 relative ${isActive("/profile") ? 'opacity-100' : 'opacity-65'}`}><CiGrid31 />Dashboard {isActive("/profile") && <span className="absolute -right-8 text-2xl">•</span>}</Link>
-                            <Link to="bookings" className={`flex items-center gap-3 transition duration-300 hover:opacity-100 relative ${isActive("/profile/bookings") || isActive("/profile/booking_detail")  ? 'opacity-100' : 'opacity-65'}`}><IoCarSportOutline />Vehicles {(isActive("/profile/bookings") || isActive("/profile/booking_detail")) && <span className="absolute -right-8 text-2xl">•</span>}</Link>
-                            <Link to="payment_history" className={`flex items-center gap-3 transition duration-300 hover:opacity-100 relative ${isActive("/profile/payment_history") ? 'opacity-100' : 'opacity-65'}`}><PiMoneyWavyLight />Payments {isActive("/profile/payment_history") && <span className="absolute -right-8 text-2xl">•</span>}</Link>
+                            <Link to="/dashboard" className={`flex items-center gap-3 transition duration-300 hover:opacity-100 relative ${isActive("/dashboard") ? 'opacity-100' : 'opacity-65'}`}><CiGrid31 />Dashboard {isActive("/dashboard") && <span className="absolute -right-8 text-2xl">•</span>}</Link>
+                            <Link to="vehicles" className={`flex items-center gap-3 transition duration-300 hover:opacity-100 relative ${isActive("/dashboard/vehicles") ? 'opacity-100' : 'opacity-65'}`}><IoCarSportOutline />Vehicles {(isActive("/dashboard/vehicles") || isActive("/dashboard/vehicles")) && <span className="absolute -right-8 text-2xl">•</span>}</Link>
+                            <Link to="payments" className={`flex items-center gap-3 transition duration-300 hover:opacity-100 relative ${isActive("/dashboard/payments") ? 'opacity-100' : 'opacity-65'}`}><PiMoneyWavyLight />Payments {isActive("/dashboard/payments") && <span className="absolute -right-8 text-2xl">•</span>}</Link>
+                            <Link to="customers" className={`flex items-center gap-3 transition duration-300 hover:opacity-100 relative ${isActive("/dashboard/customers") ? 'opacity-100' : 'opacity-65'}`}><FiUsers />Customers {isActive("/dashboard/customers") && <span className="absolute -right-8 text-2xl">•</span>}</Link>
                         </div>
 
                     }
