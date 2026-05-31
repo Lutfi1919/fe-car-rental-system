@@ -3,6 +3,7 @@ import porsche from '../assets/porsche.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect, useContext, useState } from 'react';
+import { Login } from '../services/user.service';
 
 export default function Login() {
     const [email, setEmail] = useState("")
@@ -14,24 +15,11 @@ export default function Login() {
         e.preventDefault();
 
         try {
-            const response = await fetch("http://localhost:4000/login", {
-                method: "POST",
-                headers: {
-                    "Content-Type" : "application/json",
-                },
-                body: JSON.stringify({
-                    email,
-                    password
-                }),
-            });
-
-            const data = await response.json();
-            if (!response.ok) {
-                throw new Error(data.message || "Login gagal!");
-            }
+            const data = await Login({ email, password });
 
             localStorage.setItem("token", data.data.token);
-            navigate("/")
+
+            navigate("/");
 
         } catch (error) {
             setError("Gagal Login! pastikan email dan password sesuai");
@@ -74,11 +62,11 @@ export default function Login() {
                             <hr className='text-[#585858] border-t-2 my-10'/>
                             <form onSubmit={handleSubmit}>
                                 <div className="mb-4">
-                                    <label className="block text-[#222222] text-sm font-bold mb-2" for="email">Your email</label>
+                                    <label className="block text-[#222222] text-sm font-bold mb-2" htmlFor="email">Your email</label>
                                     <input className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300" id="email" type="email" placeholder="instaDrive@email.com" value={email} onChange={(e) => setEmail(e.target.value)} required />
                                 </div>
                                 <div className="mb-4">
-                                    <label className="block text-[#222222] text-sm font-bold mb-2" for="password">Your password</label>
+                                    <label className="block text-[#222222] text-sm font-bold mb-2" htmlFor="password">Your password</label>
                                     <input className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300" id="password" type="password" placeholder="••••••••••" value={password} onChange={(e) => setPassword(e.target.value)} required />
                                 </div>  
                                 <button type="submit" className="w-full bg-[#222222] text-white py-2 px-4 rounded-lg hover:ring hover:ring-inset hover:ring-[#222222] hover:text-[#222222] hover:bg-transparent transition-all duration-150 cursor-pointer">Let's get started</button>
