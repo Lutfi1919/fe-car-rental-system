@@ -6,6 +6,12 @@ export const getPayments = async () => {
     return response.data;
 };
 
+// endpoint get user payments
+export const getUserPayments = async () => {
+    const response = await api.get("/payments/profile");
+    return response.data;
+}
+
 // endpoint change payment status
 export const changePaymentStatus = async (paymentId, formData) => {
     const response = await api.patch(`/payments/${paymentId}/status`, formData);
