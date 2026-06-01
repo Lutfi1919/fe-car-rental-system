@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from 'react';
+import { getProfile } from "../services/user.service";
 
 export default function NavbarComp() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -8,21 +9,10 @@ export default function NavbarComp() {
     const [profile, setProfile] = useState({});
 
     async function getUser() {
-        const url = "http://localhost:4000/users/profile";
         try {
-            const token = localStorage.getItem("token");
-            const response = await fetch(url, {
-                headers: {
-                    Authorization: token
-                }
-            });
-            if (!response.ok) {
-                throw new Error(`Response status: ${response.status}`);
-            }
-        
-            const result = await response.json();
-            setProfile(result.data);
+            const result = await getProfile();
 
+            setProfile(result.data);
         } catch (error) {
             console.error(error.message);
         }
@@ -54,7 +44,6 @@ export default function NavbarComp() {
                 <Link to="/" className="text-2xl italic" style={{fontFamily: "Anton"}}>InstaDrive.</Link>
                 <div className="flex items-center gap-10">
                     <Link to="/" className={`relative flex items-center hover:opacity-100 transition duration-250 ${isActive("/") ? "opacity-100" : "opacity-50"}`}>{isActive("/") && <span className="absolute -left-3 text-2xl">•</span>} Home</Link>
-                    <Link to="/catalog" className={`relative flex items-center hover:opacity-100 transition duration-250 ${isActive("/catalog") ? "opacity-100" : "opacity-50"}`}>{isActive("/catalog") && <span className="absolute -left-3 text-2xl">•</span>} Catalog</Link>
                     <Link to="/fleet" className={`relative flex items-center hover:opacity-100 transition duration-250 ${isActive("/fleet") ? "opacity-100" : "opacity-50"}`}>{isActive("/fleet") && <span className="absolute -left-3 text-2xl">•</span>} Fleet</Link>
                 </div>
                 {
@@ -65,7 +54,7 @@ export default function NavbarComp() {
                     </div>
                     :
                     <div className="flex items-center gap-1">
-                        <Link to={profile.role == 'user' ? "/profile" : "/dashboard"} className="px-7 py-1.5 transition duration-150 rounded-full ring-1 ring-inset hover:ring-white hover:bg-white hover:text-black hover:-translate-y-0.5">{profile.role == 'user' ? "Profile" : "Dashboard"}</Link>
+                        <Link to={profile.role === 'user' ? "/profile" : "/dashboard"} className="px-7 py-1.5 transition duration-150 rounded-full ring-1 ring-inset hover:ring-white hover:bg-white hover:text-black hover:-translate-y-0.5">{profile.role == 'user' ? "Profile" : "Dashboard"}</Link>
                     </div>
                 }
             </div>

@@ -5,15 +5,10 @@ import { TbManualGearbox } from "react-icons/tb";
 import { Link } from "react-router-dom";
 
 export default function CarCardComp({ item, type }) {
+    const token = localStorage.getItem("token");
+
     return(
         <>
-            {/* <div className="ring ring-inset p-5 rounded-2xl">
-                <img src={item.image} className="w-70 object-cover " alt="car image" />
-                <p>{item.name}</p>
-                <p>{item.type}</p>
-                <p>{item.fuel_type}</p>
-                <p>{item.transmission}</p>
-            </div> */}
             {
                 type === 'admin' ? 
                 <div className="flex w-86 flex-col overflow-hidden ring-1 hover:-translate-y-0.5 transition-all duration-300 hover:shadow-2xl text-[#222222] ring-[#585858]/10 shadow-lg rounded-2xl">
@@ -61,7 +56,7 @@ export default function CarCardComp({ item, type }) {
                             <p className='font-bold text-lg'><span className='text-[#85BB65]'>Rp {item.price_per_day.toLocaleString('id-ID')}</span><span className='font-light text-sm ms-1'>/day</span></p>
                         </div>
                         <div className="flex justify-end">
-                            <Link to={`vehicles/${item.id}`} className='hover:ring-1 hover:ring-[#222222] hover:ring-inset hover:bg-transparent transition duration-300 hover:text-[#222222] bg-[#222222] text-white text-sm px-5 py-2 rounded-full flex items-center hover:shadow-lg'>Rent now <IoArrowForward className='ms-2'/></Link>
+                            <Link to={token ? `/vehicles/${item.id}` : '/login'} className='hover:ring-1 hover:ring-[#222222] hover:ring-inset hover:bg-transparent transition duration-300 hover:text-[#222222] bg-[#222222] text-white text-sm px-5 py-2 rounded-full flex items-center hover:shadow-lg'>Rent now <IoArrowForward className='ms-2'/></Link>
                         </div>
                     </div>
                 </div>

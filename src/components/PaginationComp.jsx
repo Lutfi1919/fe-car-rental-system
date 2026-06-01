@@ -1,12 +1,16 @@
 import { Pagination } from "flowbite-react";
 
-export default function PaginationComp({ currentPage, onPageChange }) {
+export default function PaginationComp({ currentPage, totalPages, onPageChange, rows, total }) {
     return (
-        <div className="flex overflow-x-auto sm:justify-center">
+        <div className="flex justify-between items-center mt-5" data-aos="fade-in">
+            <p className="text-sm text-[#585858]">
+                Showing {rows} of {total} Entries
+            </p>
+
             <Pagination
                 layout="pagination"
                 currentPage={currentPage}
-                totalPages={1000}
+                totalPages={totalPages}
                 onPageChange={onPageChange}
                 previousLabel="Go back"
                 nextLabel="Go forward"

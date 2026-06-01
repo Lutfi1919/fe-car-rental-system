@@ -1,7 +1,7 @@
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom"
 import devGanteng from "../assets/dev ganteng.jpeg"
 import { IoArrowForward, IoCalendarOutline, IoCarSportOutline, IoPersonOutline } from "react-icons/io5"
-import { PiIdentificationCardLight, PiMoneyWavyLight } from "react-icons/pi"
+import { PiFingerprintLight, PiIdentificationCardLight, PiMoneyWavyLight } from "react-icons/pi"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect, useState } from 'react';
@@ -9,6 +9,8 @@ import { IoIosLogOut } from "react-icons/io";
 import { GoHistory } from "react-icons/go";
 import { CiCircleCheck, CiCircleInfo, CiCircleMinus, CiCircleRemove, CiGrid31 } from "react-icons/ci";
 import { FiUsers } from "react-icons/fi";
+import { HiOutlineReceiptRefund } from "react-icons/hi2";
+import { getProfile } from "../services/user.service";
 
 export default function SidebarComp() {
     const location = useLocation();
@@ -22,19 +24,9 @@ export default function SidebarComp() {
     }
 
     async function getUser() {
-        const url = "http://localhost:4000/users/profile";
         try {
-            const token = localStorage.getItem("token");
-            const response = await fetch(url, {
-                headers: {
-                    Authorization: token
-                }
-            });
-            if (!response.ok) {
-                throw new Error(`Response status: ${response.status}`);
-            }
-        
-            const result = await response.json();
+            const result = await getProfile();
+
             setProfile(result.data);
         } catch (error) {
             console.error(error.message);
@@ -55,7 +47,7 @@ export default function SidebarComp() {
     return (
         <>
             <div className="pt-25 flex min-h-screen text-[#222222]" style={{fontFamily: "Stack Sans Headline"}} data-aos="fade-in">
-                <div className="shrink-0 flex flex-col items-center p-10 border-e-2 border-[#585858]/10 w-70 max-w-200">
+                <div className="shrink-0 flex flex-col items-center p-10 border-e-2 border-[#585858]/10 w-70">
                     <img src={profile.profile_image} alt="poto propil" className="w-22 h-22 object-cover rounded-full shadow-lg"/>
                     <p className="mt-3 text-xl truncate max-w-70 capitalize">{profile.name}</p>
                     <p className="text-sm font-light truncate max-w-70 text-[#585858]">{profile.email}</p>
@@ -89,9 +81,12 @@ export default function SidebarComp() {
                         :
                         <div className="mt-15 flex mb-20 flex-col self-start gap-5 text-[#222222]">
                             <Link to="/dashboard" className={`flex items-center gap-3 transition duration-300 hover:opacity-100 relative ${isActive("/dashboard") ? 'opacity-100' : 'opacity-65'}`}><CiGrid31 />Dashboard {isActive("/dashboard") && <span className="absolute -right-8 text-2xl">•</span>}</Link>
-                            <Link to="vehicles" className={`flex items-center gap-3 transition duration-300 hover:opacity-100 relative ${isActive("/dashboard/vehicles") ? 'opacity-100' : 'opacity-65'}`}><IoCarSportOutline />Vehicles {(isActive("/dashboard/vehicles") || isActive("/dashboard/vehicles")) && <span className="absolute -right-8 text-2xl">•</span>}</Link>
+                            <Link to="bookings" className={`flex items-center gap-3 transition duration-300 hover:opacity-100 relative ${isActive("/dashboard/bookings") ? 'opacity-100' : 'opacity-65'}`}><IoCalendarOutline />Bookings {isActive("/dashboard/bookings") && <span className="absolute -right-8 text-2xl">•</span>}</Link>
                             <Link to="payments" className={`flex items-center gap-3 transition duration-300 hover:opacity-100 relative ${isActive("/dashboard/payments") ? 'opacity-100' : 'opacity-65'}`}><PiMoneyWavyLight />Payments {isActive("/dashboard/payments") && <span className="absolute -right-8 text-2xl">•</span>}</Link>
+                            <Link to="vehicles" className={`flex items-center gap-3 transition duration-300 hover:opacity-100 relative ${isActive("/dashboard/vehicles") ? 'opacity-100' : 'opacity-65'}`}><IoCarSportOutline />Vehicles {isActive("/dashboard/vehicles") && <span className="absolute -right-8 text-2xl">•</span>}</Link>
+                            <Link to="returns" className={`flex items-center gap-3 transition duration-300 hover:opacity-100 relative ${isActive("/dashboard/returns") ? 'opacity-100' : 'opacity-65'}`}><HiOutlineReceiptRefund />Returns {isActive("/dashboard/returns") && <span className="absolute -right-8 text-2xl">•</span>}</Link>
                             <Link to="customers" className={`flex items-center gap-3 transition duration-300 hover:opacity-100 relative ${isActive("/dashboard/customers") ? 'opacity-100' : 'opacity-65'}`}><FiUsers />Customers {isActive("/dashboard/customers") && <span className="absolute -right-8 text-2xl">•</span>}</Link>
+                            <Link to="verifications" className={`flex items-center gap-3 transition duration-300 hover:opacity-100 relative ${isActive("/dashboard/verifications") ? 'opacity-100' : 'opacity-65'}`}><PiFingerprintLight />Verifications {isActive("/dashboard/verifications") && <span className="absolute -right-8 text-2xl">•</span>}</Link>
                         </div>
 
                     }
@@ -106,7 +101,7 @@ export default function SidebarComp() {
                             ""
                     }
                 </div>
-                <div className="flex-1 ps-7 pe-5">
+                <div className="flex-1 min-w-0 overflow-hidden ps-7 pe-5">
                     <Outlet />
                 </div>
             </div>
