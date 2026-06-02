@@ -19,8 +19,9 @@ import VehicleCrud from "../pages/VehicleCrud";
 import CreateVehicle from "../pages/CreateVehicle";
 import DashBookings from "../pages/DashBookings";
 import DashVerifications from "../pages/DashVerifications";
-import DashReturns from "../pages/DashReturns";
 import DashBookingDetail from "../pages/DashBookingDetail";
+import { adminAuth } from "../middlewares/adminAuth";
+import { userAuth } from "../middlewares/userAuth";
 
 export const router = createBrowserRouter([
     {
@@ -29,34 +30,6 @@ export const router = createBrowserRouter([
         children: [
             { path: "/", element: <App /> },
             { path: "/fleet", element: <Fleet /> },
-            { path: "/vehicles/:id", element: <VehicleBooking /> },
-            { path: "/vehicles/:id/edit", element: <VehicleCrud /> },
-            { path: "/vehicles/create", element: <CreateVehicle /> },
-            { 
-                path: "/profile", 
-                element: <SidebarComp />,
-                children: [
-                    { path: "/profile", element: <Profile /> },
-                    { path: "verification", element: <UserVerify /> },
-                    { path: "bookings", element: <UserBookingsHistory /> },
-                    { path: "payment_history", element: <UserPaymentHistory /> },
-                    { path: "bookings/:id/booking_detail", element: <UserBookingDetail /> },
-                ]
-            },
-            { 
-                path: "/dashboard", 
-                element: <SidebarComp />,
-                children: [
-                    { path: "/dashboard", element: <Dashboard /> },
-                    { path: "vehicles", element: <DashVehicles /> },
-                    { path: "bookings", element: <DashBookings /> },
-                    { path: ":id/booking_detail", element: <DashBookingDetail /> },
-                    { path: "payments", element: <DashPayments /> },
-                    { path: "customers", element: <DashCustomers /> },
-                    { path: "verifications", element: <DashVerifications /> },
-                    { path: "returns", element: <DashReturns /> },
-                ]
-            },
         ]
     },
     {
@@ -67,4 +40,48 @@ export const router = createBrowserRouter([
         path: "/signup",
         element: <SignUp />
     },
-])
+    {
+        path: "/",
+        element: <Template />,
+        loader: userAuth,
+        children: [
+            {
+                path: "/profile",
+                element: <SidebarComp />,
+                loader: userAuth,
+                children: [
+                    { path: "/profile", element: <Profile /> },
+                    { path: "verification", element: <UserVerify /> },
+                    { path: "bookings", element: <UserBookingsHistory /> },
+                    { path: "payment_history", element: <UserPaymentHistory /> },
+                    { path: "bookings/:id/booking_detail", element: <UserBookingDetail /> },
+                ]
+            },
+            { path: "/vehicles/:id", element: <VehicleBooking /> }
+        ]
+    },
+    {
+        path: "/",
+        element: <Template />,
+        loader: adminAuth,
+        children: [
+                {   
+                    path: "/dashboard",
+                    element: <SidebarComp />,
+                    loader: adminAuth,
+                    children: [
+                        { path: "/dashboard", element: <Dashboard /> },
+                        { path: "vehicles", element: <DashVehicles /> },
+                        { path: "bookings", element: <DashBookings /> },
+                        { path: ":id/booking_detail", element: <DashBookingDetail /> },
+                        { path: "payments", element: <DashPayments /> },
+                        { path: "customers", element: <DashCustomers /> },
+                        { path: "verifications", element: <DashVerifications /> },
+                    ]
+                },
+                { path: "/vehicles/:id", element: <VehicleBooking /> },
+                { path: "/vehicles/:id/edit", element: <VehicleCrud /> },
+                { path: "/vehicles/create", element: <CreateVehicle /> },
+            ]
+        },
+    ])
