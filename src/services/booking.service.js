@@ -17,3 +17,9 @@ export const showBooking = async (id) => {
     const response = await api.get(`/booking/${id}`);
     return response.data;
 };
+
+// endpoint change status
+export const changeBookingStatus = async (id, status) => {
+    const response = await api.patch(`/booking/${id}`, { status });
+    return response.data;
+};
