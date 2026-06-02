@@ -10,7 +10,7 @@ import porsche from './assets/logos/porsche.png';
 import vw from './assets/logos/vw.png';
 import sideBlueCar from './assets/side blue car.png';
 import sideGrayCar from './assets/side gray car.png';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { IoArrowForward, IoCarSportOutline } from 'react-icons/io5';
@@ -22,16 +22,33 @@ import { TbManualGearbox } from 'react-icons/tb';
 import { PiGasPumpLight } from 'react-icons/pi';
 import { HashLink } from 'react-router-hash-link';
 import devGanteng from './assets/dev ganteng.jpeg';
+import ListCarCard from './components/ListCarCard';
+import { getVehicles } from './services/vehicle.service';
 
 function App() {
+  const [vehicle, setVehicle] = useState([]);
+
+  async function getVehicle() {
+    try {
+      
+        const result = await getVehicles();
+
+        setVehicle(result.data.slice(0,3));
+
+    } catch (error) {
+        console.error(error.message);
+    }
+  }
 
   useEffect(() => {
     AOS.init({
       duration: 700,
       once: false,
       easing: 'ease-in-out'
-    })
-  })
+    });
+
+    getVehicle();
+  }, [])
 
   return (
     <>
@@ -107,83 +124,7 @@ function App() {
             <p className="text-8xl tracking-tight font-medium text-[#222222]">Our featured fleet</p>
             <p className="text-center text-sm text-[#585858] -mt-1">We provide our customer with the most increadible driving emotions. That's why we have only world-class <br /> cars in our fleet.</p>
           </div>
-          <div className="grid grid-cols-3 gap-5" data-aos="fade-in">
-            <div className="flex flex-col overflow-hidden ring-1 hover:-translate-y-0.5 transition-all duration-300 hover:shadow-2xl text-[#222222] ring-[#585858]/10 shadow-lg rounded-2xl">
-              <img src="https://cdn.pixabay.com/photo/2020/05/19/10/05/opel-5190050_1280.jpg" alt="Fleet" className='h-55 object-cover' />
-              <div className="p-5 text-[#222222]">
-                <p className="text-xl">Mobil Merah</p>
-                <p className="font-light text-sm">Sedan</p>
-                <div className="flex flex-row justify-between mt-5 text-[#585858]">
-                  <div className="text-sm font-light">
-                    <p className='flex items-center'><GoPeople className='me-2'/>2 Passengers</p>
-                    <p className='flex items-center'><PiGasPumpLight className='me-2'/>Gasoline</p>
-                  </div>
-                  <div className="text-sm font-light">
-                    <p className='flex items-center'><IoCarSportOutline className='me-2'/>Porsche</p>
-                    <p className='flex items-center'><TbManualGearbox className='me-2'/>Manual</p>
-                  </div>
-                </div>
-                <hr className='text-[#585858]/40 border my-5 mx-3'/>
-                <div className="flex items-center justify-between mb-3">
-                  <p className=''>Price</p>
-                  <p className='font-bold text-lg'><span className='text-[#85BB65]'>$220</span><span className='font-light text-sm ms-1'>/day</span></p>
-                </div>
-                <div className="flex justify-end">
-                  <Link to="/" className='hover:ring-1 hover:ring-[#222222] hover:ring-inset hover:bg-transparent transition duration-300 hover:text-[#222222] bg-[#222222] text-white text-sm px-5 py-2 rounded-full flex items-center hover:shadow-lg'>Rent now <IoArrowForward className='ms-2'/></Link>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col overflow-hidden ring-1 hover:-translate-y-0.5 transition-all duration-300 hover:shadow-2xl text-[#222222] ring-[#585858]/10 shadow-lg rounded-2xl">
-              <img src="https://cdn.pixabay.com/photo/2016/05/05/18/03/coupe-1374448_1280.jpg" alt="Fleet" className='h-55 object-cover' />
-              <div className="p-5">
-                <p className='text-xl'>Rolls-Royce Phantom</p>
-                <p className="font-light text-sm">Sedan</p>
-                <div className="flex flex-row justify-between mt-5 text-[#585858]">
-                  <div className="text-sm font-light">
-                    <p className='flex items-center'><GoPeople className='me-2'/>5 Passengers</p>
-                    <p className='flex items-center'><PiGasPumpLight className='me-2'/>Gasoline</p>
-                  </div>
-                  <div className="text-sm font-light">
-                    <p className='flex items-center'><IoCarSportOutline className='me-2'/>Rolls-Royce</p>
-                    <p className='flex items-center'><TbManualGearbox className='me-2'/>Automatic</p>
-                  </div>
-                </div>
-                <hr className='text-[#585858]/40 border my-5 mx-3'/>
-                <div className="flex items-center justify-between mb-3">
-                  <p className=''>Price</p>
-                  <p className='font-bold text-lg'><span className='text-[#85BB65]'>$530</span><span className='font-light text-sm ms-1'>/day</span></p>
-                </div>
-                <div className="flex justify-end">
-                  <Link to="/" className='hover:ring-1 hover:ring-[#222222] hover:ring-inset hover:bg-transparent transition duration-300 hover:text-[#222222] bg-[#222222] text-white text-sm px-5 py-2 rounded-full flex items-center hover:shadow-lg'>Rent now <IoArrowForward className='ms-2'/></Link>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col overflow-hidden ring-1 hover:-translate-y-0.5 transition-all duration-300 hover:shadow-2xl text-[#222222] ring-[#585858]/10 shadow-lg rounded-2xl">
-              <img src="https://cdn.pixabay.com/photo/2017/03/27/14/56/auto-2179220_1280.jpg" alt="Fleet" className='h-55 object-cover' />
-              <div className="p-5">
-                <p className='text-xl'>Mercedes Benz AMG</p>
-                <p className="font-light text-sm">Sedan</p>
-                <div className="flex flex-row justify-between mt-5 text-[#585858]">
-                  <div className="text-sm font-light">
-                    <p className='flex items-center'><GoPeople className='me-2'/>3 Passengers</p>
-                    <p className='flex items-center'><PiGasPumpLight className='me-2'/>Hybrid</p>
-                  </div>
-                  <div className="text-sm font-light">
-                    <p className='flex items-center'><IoCarSportOutline className='me-2'/>Mercedes Benz</p>
-                    <p className='flex items-center'><TbManualGearbox className='me-2'/>Manual</p>
-                  </div>
-                </div>
-                <hr className='text-[#585858]/40 border my-5 mx-3'/>
-                <div className="flex items-center justify-between mb-3">
-                  <p className=''>Price</p>
-                  <p className='font-bold text-lg'><span className='text-[#85BB65]'>$480</span><span className='font-light text-sm ms-1'>/day</span></p>
-                </div>
-                <div className="flex justify-end">
-                  <Link to="/" className='hover:ring-1 hover:ring-[#222222] hover:ring-inset hover:bg-transparent transition duration-300 hover:text-[#222222] bg-[#222222] text-white text-sm px-5 py-2 rounded-full flex items-center hover:shadow-lg'>Rent now <IoArrowForward className='ms-2'/></Link>
-                </div>            
-              </div>
-            </div>
-          </div>
+          <ListCarCard data={vehicle} />
           <div className="flex justify-center mt-8 mb-5" data-aos="fade-in">
             <Link to="/fleet" className='ring-1 ring-[#222222] text-[#222222] hover:bg-[#222222] hover:text-white transition-all ring-inset rounded-full px-5 py-1.5 w-fit flex items-center gap-2'>Show all vehicles <IoArrowForward /></Link>
           </div>

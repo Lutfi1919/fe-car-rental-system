@@ -30,7 +30,14 @@ export default function CarCardComp({ item, type }) {
                             <p className=''>Price</p>
                             <p className='font-bold text-lg'><span className='text-[#85BB65]'>Rp {item.price_per_day.toLocaleString('id-ID')}</span><span className='font-light text-sm ms-1'>/day</span></p>
                         </div>
-                        <div className="flex justify-end">
+                        <div className="flex justify-between">
+                            {
+                                item.status == 'available' ? (
+                                    <span className="px-5 py-1 rounded-full bg-green-400/20 text-green-600 capitalize">{item.status}</span>
+                                ) : (
+                                    <span className="px-5 py-1 rounded-full bg-amber-400/20 text-amber-600  capitalize">{item.status}</span>
+                                )
+                            }
                             <Link to={`/vehicles/${item.id}/edit`} className='hover:ring-1 hover:ring-[#222222] hover:ring-inset hover:bg-transparent transition duration-300 hover:text-[#222222] bg-[#222222] text-white text-sm px-5 py-2 rounded-full flex items-center hover:shadow-lg'>Edit <IoArrowForward className='ms-2'/></Link>
                         </div>
                     </div>

@@ -19,9 +19,9 @@ export default function SignUp() {
         try {
             const data = await Register({ name, phoneNum, email, newPassword });
 
-            localStorage.setItem("token", data.data.token);
+            localStorage.setItem("token", data.token);
 
-            navigate("/profile")
+            navigate("/login")
 
         } catch (error) {
             setError("Gagal Login! pastikan mengisi formulir dengan benar");

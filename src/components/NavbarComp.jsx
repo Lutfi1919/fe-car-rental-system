@@ -54,7 +54,7 @@ export default function NavbarComp() {
                     </div>
                     :
                     <div className="flex items-center gap-1">
-                        <Link to={profile.role === 'user' ? "/profile" : "/dashboard"} className="px-7 py-1.5 transition duration-150 rounded-full ring-1 ring-inset hover:ring-white hover:bg-white hover:text-black hover:-translate-y-0.5">{profile.role == 'user' ? "Profile" : "Dashboard"}</Link>
+                        <Link to={profile?.role === 'user' ? "/profile" : "/dashboard"} className="px-7 py-1.5 transition duration-150 rounded-full ring-1 ring-inset hover:ring-white hover:bg-white hover:text-black hover:-translate-y-0.5">{profile.role == 'user' ? "Profile" : "Dashboard"}</Link>
                     </div>
                 }
             </div>

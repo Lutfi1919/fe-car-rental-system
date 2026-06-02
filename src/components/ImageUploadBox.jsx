@@ -6,7 +6,7 @@ export default function ImageUploadBox({ label, file, setFile}) {
     return (
         <div className="p-5 ring ring-inset ring-[#222222]/20 rounded-2xl flex flex-col gap-4">
             <p className="text-lg font-medium">{label}</p>
-            <input type="file" accept="image/*" onChange={(e) => setFile(e.target.files[0])} className="ring ring-inset ring-[#222222]/30 cursor-pointer rounded-xl p-3 w-full file:mr-4 file:py-1 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-black file:text-white"/>
+            <input type="file" accept="image/*" onChange={(e) => setFile(e.target.files)} className="ring ring-inset ring-[#222222]/30 cursor-pointer rounded-xl p-3 w-full file:mr-4 file:py-1 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-black file:text-white"/>
 
             {preview ? (
                 <div className="relative group">

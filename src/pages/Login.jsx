@@ -3,7 +3,7 @@ import porsche from '../assets/porsche.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect, useContext, useState } from 'react';
-import { Login } from '../services/user.service';
+import { Login as loginUser } from '../services/user.service';
 
 export default function Login() {
     const [email, setEmail] = useState("")
@@ -15,7 +15,7 @@ export default function Login() {
         e.preventDefault();
 
         try {
-            const data = await Login({ email, password });
+            const data = await loginUser({ email, password });
 
             localStorage.setItem("token", data.data.token);
 
