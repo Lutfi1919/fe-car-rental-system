@@ -74,6 +74,7 @@ export default function UserVerify() {
                         <div className="grid md:grid-cols-2 gap-6">
                             <ImageUploadBox label="Upload KTP" file={ktpFile} setFile={setKtpFile}/>
                             <ImageUploadBox label="Upload SIM" file={simFile} setFile={setSimFile}/>
+                            {/* <input type="file"  accept="image/*" /> */}
                         </div>
 
                         <button onClick={handleSubmit} disabled={ !ktpFile || !simFile || loading } className="bg-[#222222] text-white px-6 py-3 rounded-xl hover:bg-transparent hover:ring hover:ring-inset hover:ring-[#222222] hover:text-[#222222] transition disabled:opacity-50">

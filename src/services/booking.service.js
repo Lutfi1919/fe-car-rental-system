@@ -12,7 +12,7 @@ export const getUserBookings = async () => {
     return response.data;
 };
 
-// endpoitn show booking
+// endpoint show booking
 export const showBooking = async (id) => {
     const response = await api.get(`/booking/${id}`);
     return response.data;
